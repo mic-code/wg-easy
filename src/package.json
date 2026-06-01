@@ -18,7 +18,8 @@
     "db:generate": "drizzle-kit generate",
     "cli:build": "node cli/build.js",
     "cli:dev": "tsx cli/index.ts",
-    "test:unit": "vitest run --project unit"
+    "test:unit": "vitest run --project unit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@eschricht/nuxt-color-mode": "^1.2.0",

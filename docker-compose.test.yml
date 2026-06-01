@@ -1,0 +1,37 @@
+services:
+  wg-easy-test:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    command: dev
+    container_name: wg-easy-test
+    volumes:
+      - ./src/:/app/
+      - temp:/app/.nuxt/
+      - temp1:/app/node_modules/
+      - /lib/modules:/lib/modules:ro
+    ports:
+      - "51820:51820/udp"
+      - "51821:51821/tcp"
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=0
+      - net.ipv6.conf.all.forwarding=1
+      - net.ipv6.conf.default.forwarding=1
+    environment:
+      - INSECURE=true
+      - INIT_ENABLED=true
+      - INIT_HOST=localhost
+      - INIT_PORT=51820
+      - INIT_USERNAME=admin
+      - INIT_PASSWORD=adminadmin123
+
+volumes:
+  temp:
+    driver: local
+  temp1:
+    driver: local
