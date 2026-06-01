@@ -114,6 +114,11 @@
     "hooksDescription": "Os hooks só funcionam com wg-quick",
     "hooksLeaveEmpty": "Somente para wg-quick. Caso contrário, deixe em branco.",
     "dnsDesc": "Os clientes do servidor DNS usarão (substitui a configuração global)",
+    "regenerateSecretKey": "Regenerar chave secreta",
+    "regenerateSecretKeyDesc": "Gerar uma nova chave pré-compartilhada. Os clientes precisarão baixar sua configuração novamente.",
+    "regenerateSecretKeyDialog1": "Tem certeza de que deseja regenerar a chave secreta para",
+    "regenerateSecretKeyDialog2": "Todos os clientes precisarão baixar sua configuração novamente.",
+    "secretKeyRegenerated": "Chave secreta regenerada",
     "notConnected": "Client não conectado",
     "endpoint": "Endpoint",
     "endpointDesc": "IP do cliente a partir do qual a conexão WireGuard é estabelecida"

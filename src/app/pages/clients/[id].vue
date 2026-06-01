@@ -206,6 +206,19 @@
                 as="span"
               />
             </ClientsConfigDialog>
+            <ClientsRegenerateSecretKeyDialog
+              trigger-class="col-span-2"
+              :client-name="data.name"
+              @regenerate="regenerateSecretKey"
+            >
+              <FormSecondaryActionField
+                :label="$t('client.regenerateSecretKey')"
+                class="w-full"
+                type="button"
+                tabindex="-1"
+                as="span"
+              />
+            </ClientsRegenerateSecretKeyDialog>
           </FormGroup>
         </FormElement>
       </PanelBody>
@@ -263,5 +276,24 @@ const _deleteClient = useSubmit(
 
 function deleteClient() {
   return _deleteClient(undefined);
+}
+
+const _regenerateSecretKey = useSubmit(
+  `/api/client/${id}/regenerateSecretKey`,
+  {
+    method: 'post',
+  },
+  {
+    successMsg: t('client.secretKeyRegenerated'),
+    revert: async (success) => {
+      if (success) {
+        await refresh();
+      }
+    },
+  }
+);
+
+function regenerateSecretKey() {
+  return _regenerateSecretKey(undefined);
 }
 </script>

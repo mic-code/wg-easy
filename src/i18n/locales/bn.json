@@ -114,6 +114,11 @@
     "hooksDescription": "হুকস শুধুমাত্র wg-quick এর সাথে কাজ করে",
     "hooksLeaveEmpty": "শুধুমাত্র wg-quick এর জন্য। অন্যথায় ফাঁকা রাখুন",
     "dnsDesc": "DNS সার্ভার ক্লায়েন্টরা ব্যবহার করবে (গ্লোবাল কনফিগ ওভাররাইড করবে)",
+    "regenerateSecretKey": "Regenerate Secret Key",
+    "regenerateSecretKeyDesc": "Generate a new pre-shared key. Clients will need to download their configuration again.",
+    "regenerateSecretKeyDialog1": "Are you sure you want to regenerate the secret key for",
+    "regenerateSecretKeyDialog2": "All clients will need to download their configuration again.",
+    "secretKeyRegenerated": "Secret key regenerated",
     "notConnected": "ক্লায়েন্ট সংযুক্ত নয়",
     "endpoint": "এন্ডপয়েন্ট",
     "endpointDesc": "ক্লায়েন্টের IP যেখান থেকে WireGuard সংযোগ স্থাপন করা হয়েছে"

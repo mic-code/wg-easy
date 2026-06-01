@@ -263,6 +263,15 @@ export class ClientService {
     });
   }
 
+  async regenerateSecretKey(id: ID) {
+    const preSharedKey = await wg.generatePreSharedKey();
+    await this.#db
+      .update(client)
+      .set({ preSharedKey })
+      .where(eq(client.id, id))
+      .execute();
+  }
+
   async createFromExisting({
     name,
     enabled,

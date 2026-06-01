@@ -114,6 +114,11 @@
     "hooksDescription": "Hooks hanya berfungsi dengan wg-quick",
     "hooksLeaveEmpty": "Hanya untuk wg-quick. Jika tidak, biarkan kosong.",
     "dnsDesc": "Server DNS yang akan digunakan klien (menggantikan konfigurasi global)",
+    "regenerateSecretKey": "Regenerasi Kunci Rahasia",
+    "regenerateSecretKeyDesc": "Buat kunci pre-shared baru. Klien perlu mengunduh konfigurasi mereka lagi.",
+    "regenerateSecretKeyDialog1": "Apakah Anda yakin ingin meregenerasi kunci rahasia untuk",
+    "regenerateSecretKeyDialog2": "Semua klien perlu mengunduh konfigurasi mereka lagi.",
+    "secretKeyRegenerated": "Kunci rahasia diregenerasi",
     "notConnected": "Klien tidak terhubung",
     "endpoint": "Titik Akhir (Endpoint)",
     "endpointDesc": "IP klien dari mana koneksi WireGuard dibuat"
