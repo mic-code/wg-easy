@@ -1,9 +1,6 @@
 import { expect, test, type Page, type APIRequestContext } from '@playwright/test';
 
-const CREDENTIALS = {
-  username: 'admin',
-  password: 'adminadmin123',
-};
+const CREDENTIALS = { username: 'admin', password: 'adminadmin123' };
 
 async function login(page: Page) {
   await page.goto('/login');
@@ -22,8 +19,7 @@ async function createClientViaApi(request: APIRequestContext): Promise<{ id: num
   });
   expect(response.ok()).toBeTruthy();
   const result = await response.json();
-  const clientId = result[0]?.clientId ?? result.clientId;
-  return { id: clientId, name };
+  return { id: result.clientId, name };
 }
 
 async function getClientConfig(request: APIRequestContext, clientId: number): Promise<string> {
@@ -37,56 +33,64 @@ function extractPresharedKey(config: string): string | null {
   return match ? match[1] : null;
 }
 
+async function navigateToClientDetail(page: Page, clientId: number) {
+  await page.goto('/');
+  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(1000);
+
+  const clientLink = page.locator(`a[href="/clients/${clientId}"]`);
+  await clientLink.waitFor({ state: 'visible', timeout: 10000 });
+  await clientLink.click();
+  await page.waitForURL(`/clients/${clientId}`, { timeout: 10000 });
+}
+
+async function waitForClientDetailPage(page: Page, clientName: string) {
+  await page.locator('text=' + clientName).first().waitFor({ state: 'visible', timeout: 15000 });
+  await page.waitForTimeout(1000);
+}
+
+async function getRegenerateButton(page: Page) {
+  return page.locator('input[type="button"]').filter({ hasText: /regenerate secret key/i });
+}
+
 test.describe('Regenerate Secret Key', () => {
-  test('should regenerate preshared key via UI', async ({ page, context }) => {
+  test('should regenerate preshared key via UI and verify it is persisted in configuration', async ({ page, context }) => {
     await login(page);
     const request = context.request;
 
     const client = await createClientViaApi(request);
 
-    const configBefore = await getClientConfig(request, client.id);
-    const presharedKeyBefore = extractPresharedKey(configBefore);
+    const presharedKeyBefore = extractPresharedKey(await getClientConfig(request, client.id));
     expect(presharedKeyBefore).toBeTruthy();
 
-    await page.goto(`/clients/${client.id}`);
+    await navigateToClientDetail(page, client.id);
+    await waitForClientDetailPage(page, client.name);
 
-    const pageErrors: string[] = [];
-    page.on('pageerror', (err) => pageErrors.push(err.message));
+    const regenerateButton = await getRegenerateButton(page);
+    await expect(regenerateButton.first()).toBeVisible({ timeout: 10000 });
+    await regenerateButton.first().scrollIntoViewIfNeeded();
+    await regenerateButton.first().click();
 
-    await page.waitForLoadState('networkidle').catch(() => {});
+    const dialog = page.locator('[role="dialog"]');
+    await expect(dialog).toBeVisible({ timeout: 5000 });
+
+    await expect(dialog).toContainText(/are you sure/i);
+    await expect(dialog).toContainText(client.name);
+    await expect(dialog).toContainText(/download their configuration again/i);
+
+    const confirmButton = dialog.locator('button').filter({ hasText: /regenerate secret key/i });
+    await confirmButton.click();
+
+    await expect(dialog).not.toBeVisible({ timeout: 5000 });
+
     await page.waitForTimeout(2000);
 
-    if (pageErrors.length > 0) {
-      console.log('Page errors detected, falling back to API-only verification');
-    }
-
-    const regenerateButton = page.locator('input[value*="Regenerate"]').first();
-    const hasButton = await regenerateButton.isVisible().catch(() => false);
-
-    if (hasButton) {
-      await regenerateButton.scrollIntoViewIfNeeded();
-      await regenerateButton.click();
-
-      const dialog = page.locator('[role="dialog"]');
-      await dialog.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
-
-      if (await dialog.isVisible().catch(() => false)) {
-        const confirmBtn = dialog.locator('input[value*="Regenerate"]').first();
-        await confirmBtn.click();
-        await page.waitForTimeout(2000);
-      } else {
-        const response = await request.post(`/api/client/${client.id}/regenerateSecretKey`);
-        expect(response.ok()).toBeTruthy();
-      }
-    } else {
-      const response = await request.post(`/api/client/${client.id}/regenerateSecretKey`);
-      expect(response.ok()).toBeTruthy();
-    }
-
-    const configAfter = await getClientConfig(request, client.id);
-    const presharedKeyAfter = extractPresharedKey(configAfter);
+    const presharedKeyAfter = extractPresharedKey(await getClientConfig(request, client.id));
     expect(presharedKeyAfter).toBeTruthy();
     expect(presharedKeyAfter).not.toBe(presharedKeyBefore);
+
+    const presharedKeyRecheck = extractPresharedKey(await getClientConfig(request, client.id));
+    expect(presharedKeyRecheck).toBe(presharedKeyAfter);
   });
 
   test('should cancel regeneration and keep the same preshared key', async ({ page, context }) => {
@@ -95,73 +99,35 @@ test.describe('Regenerate Secret Key', () => {
 
     const client = await createClientViaApi(request);
 
-    const configBefore = await getClientConfig(request, client.id);
-    const presharedKeyBefore = extractPresharedKey(configBefore);
+    const presharedKeyBefore = extractPresharedKey(await getClientConfig(request, client.id));
 
-    await page.goto(`/clients/${client.id}`);
-    await page.waitForLoadState('networkidle').catch(() => {});
-    await page.waitForTimeout(2000);
+    await navigateToClientDetail(page, client.id);
+    await waitForClientDetailPage(page, client.name);
 
-    const regenerateButton = page.locator('input[value*="Regenerate"]').first();
-    const hasButton = await regenerateButton.isVisible().catch(() => false);
+    const regenerateButton = await getRegenerateButton(page);
+    await expect(regenerateButton.first()).toBeVisible({ timeout: 10000 });
+    await regenerateButton.first().scrollIntoViewIfNeeded();
+    await regenerateButton.first().click();
 
-    if (hasButton) {
-      await regenerateButton.scrollIntoViewIfNeeded();
-      await regenerateButton.click();
+    const dialog = page.locator('[role="dialog"]');
+    await expect(dialog).toBeVisible({ timeout: 5000 });
 
-      const dialog = page.locator('[role="dialog"]');
-      await dialog.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+    const cancelButton = dialog.locator('button').filter({ hasText: /cancel/i });
+    await cancelButton.click();
 
-      if (await dialog.isVisible().catch(() => false)) {
-        const cancelBtn = dialog.locator('input[value*="Cancel"], input[value*="cancel"]').first();
-        await cancelBtn.click();
-      }
-    }
+    await expect(dialog).not.toBeVisible({ timeout: 5000 });
 
-    const configAfter = await getClientConfig(request, client.id);
-    const presharedKeyAfter = extractPresharedKey(configAfter);
+    const presharedKeyAfter = extractPresharedKey(await getClientConfig(request, client.id));
     expect(presharedKeyAfter).toBe(presharedKeyBefore);
   });
 
-  test('should show confirmation dialog with warning text', async ({ page, context }) => {
+  test('should call the regenerate API endpoint directly and verify key change is persisted', async ({ page, context }) => {
     await login(page);
     const request = context.request;
 
     const client = await createClientViaApi(request);
 
-    await page.goto(`/clients/${client.id}`);
-    await page.waitForLoadState('networkidle').catch(() => {});
-    await page.waitForTimeout(2000);
-
-    const regenerateButton = page.locator('input[value*="Regenerate"]').first();
-    const hasButton = await regenerateButton.isVisible().catch(() => false);
-
-    if (!hasButton) {
-      return;
-    }
-
-    await regenerateButton.scrollIntoViewIfNeeded();
-    await regenerateButton.click();
-
-    const dialog = page.locator('[role="dialog"]');
-    await dialog.waitFor({ state: 'visible', timeout: 5000 });
-
-    await expect(dialog).toContainText(/regenerate secret key/i);
-    await expect(dialog).toContainText(client.name);
-    await expect(dialog).toContainText(/download their configuration again/i);
-
-    const cancelBtn = dialog.locator('input[value*="Cancel"], input[value*="cancel"]').first();
-    await cancelBtn.click();
-  });
-
-  test('should call the regenerate API endpoint directly and verify key change', async ({ page, context }) => {
-    await login(page);
-    const request = context.request;
-
-    const client = await createClientViaApi(request);
-
-    const configBefore = await getClientConfig(request, client.id);
-    const presharedKeyBefore = extractPresharedKey(configBefore);
+    const presharedKeyBefore = extractPresharedKey(await getClientConfig(request, client.id));
     expect(presharedKeyBefore).toBeTruthy();
 
     const response = await request.post(`/api/client/${client.id}/regenerateSecretKey`);
@@ -169,9 +135,11 @@ test.describe('Regenerate Secret Key', () => {
     const body = await response.json();
     expect(body.success).toBe(true);
 
-    const configAfter = await getClientConfig(request, client.id);
-    const presharedKeyAfter = extractPresharedKey(configAfter);
+    const presharedKeyAfter = extractPresharedKey(await getClientConfig(request, client.id));
     expect(presharedKeyAfter).toBeTruthy();
     expect(presharedKeyAfter).not.toBe(presharedKeyBefore);
+
+    const presharedKeyRecheck = extractPresharedKey(await getClientConfig(request, client.id));
+    expect(presharedKeyRecheck).toBe(presharedKeyAfter);
   });
 });
