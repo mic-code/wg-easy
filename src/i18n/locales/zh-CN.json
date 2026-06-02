@@ -115,11 +115,6 @@
     "hooksDescription": "钩子脚本仅在使用wg-quick时有效",
     "hooksLeaveEmpty": "如果不使用wg-quick，请留空此字段",
     "dnsDesc": "客户端将使用的 DNS 服务器（将覆盖全局配置）",
-    "regenerateSecretKey": "重新生成密钥",
-    "regenerateSecretKeyDesc": "生成新的预共享密钥。客户端需要重新下载配置。",
-    "regenerateSecretKeyDialog1": "确定要重新生成密钥吗？",
-    "regenerateSecretKeyDialog2": "所有客户端都需要重新下载配置。",
-    "secretKeyRegenerated": "密钥已重新生成",
     "notConnected": "客户端未连接",
     "endpoint": "端点",
     "endpointDesc": "建立 WireGuard 连接时客户端的 IP 地址",
@@ -129,7 +124,12 @@
     "firewallIps": "防火墙允许的IP",
     "firewallIpsDesc": "客户端可访问的目标 IP/CIDR 范围（由服务器端进行限制）。留空时将使用 服务端允许的IP 设置。支持按 端口 和 协议 进行过滤。具体语法请查看文档。",
     "downloadPng": "下载图片",
-    "copyPng": "复制图片"
+    "copyPng": "复制图片",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "修改",
@@ -211,7 +211,9 @@
       "address6": "IPv6地址",
       "serverAllowedIps": "服务端允许的IP",
       "firewallIps": "防火墙允许的IP",
-      "firewallIpsInvalid": "IP格式错误。请查看相关文档获取支持的写法。"
+      "firewallIpsInvalid": "IP格式错误。请查看相关文档获取支持的写法。",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "用户名",

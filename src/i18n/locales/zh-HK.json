@@ -115,11 +115,6 @@
     "hooksDescription": "掛鉤僅適用於wg-quick",
     "hooksLeaveEmpty": "僅適用於wg-quick，否則請留空",
     "dnsDesc": "客戶端使用的域名系統伺服器（取代全局配置）",
-    "regenerateSecretKey": "重新產生密鑰",
-    "regenerateSecretKeyDesc": "產生新的預共用密鑰。客戶端需要重新下載配置。",
-    "regenerateSecretKeyDialog1": "確定要重新產生密鑰嗎？",
-    "regenerateSecretKeyDialog2": "所有客戶端都需要重新下載配置。",
-    "secretKeyRegenerated": "密鑰已重新產生",
     "notConnected": "客戶端尚未連接",
     "endpoint": "端點",
     "endpointDesc": "建立WireGuard連線的客戶端IP地址",
@@ -129,7 +124,12 @@
     "firewallIps": "防火牆IP白名單",
     "firewallIpsDesc": "此客戶端可存取的目的地IP/CIDR（伺服器端強制執行）。留空則使用「IP白名單」。支援選填的連接埠及協定過濾，語法請參閱說明文件。",
     "downloadPng": "正在下載PNG",
-    "copyPng": "複製PNG"
+    "copyPng": "複製PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "更改",
@@ -211,7 +211,9 @@
       "address6": "IPv6地址",
       "serverAllowedIps": "伺服器IP白名單",
       "firewallIps": "防火牆IP白名單",
-      "firewallIpsInvalid": "防火牆IP輸入格式無效。請參閱說明文件以查看支援語法。"
+      "firewallIpsInvalid": "防火牆IP輸入格式無效。請參閱說明文件以查看支援語法。",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "用戶名",

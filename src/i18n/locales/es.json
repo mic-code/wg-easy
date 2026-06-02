@@ -114,11 +114,6 @@
     "hooksDescription": "Los hooks solo funcionan con wg-quick",
     "hooksLeaveEmpty": "Solo para wg-quick. En caso contrario, dejar vacío",
     "dnsDesc": "Servidor DNS que usarán los clientes (anula la configuración global)",
-    "regenerateSecretKey": "Regenerar clave secreta",
-    "regenerateSecretKeyDesc": "Generar una nueva clave precompartida. Los clientes deberán descargar su configuración de nuevo.",
-    "regenerateSecretKeyDialog1": "¿Está seguro de que desea regenerar la clave secreta para",
-    "regenerateSecretKeyDialog2": "Todos los clientes deberán descargar su configuración de nuevo.",
-    "secretKeyRegenerated": "Clave secreta regenerada",
     "notConnected": "Cliente no conectado",
     "endpoint": "Punto de conexión",
     "endpointDesc": "IP del cliente desde donde se establece la conexión WireGuard",
@@ -128,7 +123,12 @@
     "firewallIps": "IPs permitidas del cortafuegos",
     "firewallIpsDesc": "IPs/CIDRs de destino a las que este cliente puede acceder (aplicado en el servidor). Deja vacío para usar IPs permitidas. Admite filtrado opcional de puertos y protocolos. Consulta la documentación para la sintaxis.",
     "downloadPng": "Descargar PNG",
-    "copyPng": "Copiar PNG"
+    "copyPng": "Copiar PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Cambiar",
@@ -210,7 +210,9 @@
       "address6": "Dirección IPv6",
       "serverAllowedIps": "IPs permitidas del servidor",
       "firewallIps": "IPs permitidas del cortafuegos",
-      "firewallIpsInvalid": "Entrada de IP de cortafuegos no válida. Consulta la documentación para la sintaxis compatible."
+      "firewallIpsInvalid": "Entrada de IP de cortafuegos no válida. Consulta la documentación para la sintaxis compatible.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Usuario",

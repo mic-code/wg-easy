@@ -114,14 +114,14 @@
     "hooksDescription": "Gli hooks funzionano solo con wg-quick",
     "hooksLeaveEmpty": "Solo per wg-quick. Altrimenti lascia vuoto",
     "dnsDesc": "Server DNS che i client useranno (sovrascrive la config globale)",
-    "regenerateSecretKey": "Rigenera chiave segreta",
-    "regenerateSecretKeyDesc": "Genera una nuova chiave pre-condivisa. I client dovranno scaricare nuovamente la loro configurazione.",
-    "regenerateSecretKeyDialog1": "Sei sicuro di voler rigenerare la chiave segreta per",
-    "regenerateSecretKeyDialog2": "Tutti i client dovranno scaricare nuovamente la loro configurazione.",
-    "secretKeyRegenerated": "Chiave segreta rigenerata",
     "notConnected": "Client non connesso",
     "endpoint": "Endpoint",
-    "endpointDesc": "IP del client da cui viene stabilita la connessione WireGuard"
+    "endpointDesc": "IP del client da cui viene stabilita la connessione WireGuard",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Modifica",
@@ -196,7 +196,9 @@
       "expiresAt": "Scadenza",
       "address4": "Indirizzo IPv4",
       "address6": "Indirizzo IPv6",
-      "serverAllowedIps": "IP consentiti dal Server"
+      "serverAllowedIps": "IP consentiti dal Server",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Nome utente",

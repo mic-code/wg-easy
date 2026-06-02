@@ -115,17 +115,17 @@
     "hooksDescription": "Hooks fungerer bare med wg-quick",
     "hooksLeaveEmpty": "Kun for wg-quick. Ellers la det være tomt",
     "dnsDesc": "DNS-server klienter vil bruke (overstyrer global konfig)",
-    "regenerateSecretKey": "Regenerer hemmelig nøkkel",
-    "regenerateSecretKeyDesc": "Generer en ny forhånds delt nøkkel. Klienter må laste ned konfigurasjonen sin på nytt.",
-    "regenerateSecretKeyDialog1": "Er du sikker på at du vil regenerere den hemmelige nøkkelen for",
-    "regenerateSecretKeyDialog2": "Alle klienter må laste ned konfigurasjonen sin på nytt.",
-    "secretKeyRegenerated": "Hemmelig nøkkel regenerert",
     "notConnected": "Klient ikke tilkoblet",
     "endpoint": "Endepunkt",
     "endpointDesc": "IP-en til klienten som WireGuard-tilkoblingen etableres fra",
     "search": "Søk etter klienter...",
     "config": "Konfigurasjon",
-    "viewConfig": "Vis konfigurasjon"
+    "viewConfig": "Vis konfigurasjon",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Endre",
@@ -200,7 +200,9 @@
       "expiresAt": "Utløper",
       "address4": "IPv4-adresse",
       "address6": "IPv6-adresse",
-      "serverAllowedIps": "Server tillatte IP-er"
+      "serverAllowedIps": "Server tillatte IP-er",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Brukernavn",

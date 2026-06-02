@@ -115,11 +115,6 @@
     "hooksDescription": "Hooks functioneren alleen met wg-quick",
     "hooksLeaveEmpty": "Alleen voor wg-quick. Anders leeg laten",
     "dnsDesc": "DNS-serverclients zullen gebruiken (overschrijft algemene instellingen)",
-    "regenerateSecretKey": "Geheime sleutel opnieuw genereren",
-    "regenerateSecretKeyDesc": "Genereer een nieuwe vooraf gedeelde sleutel. Clients moeten hun configuratie opnieuw downloaden.",
-    "regenerateSecretKeyDialog1": "Weet u zeker dat u de geheime sleutel opnieuw wilt genereren voor",
-    "regenerateSecretKeyDialog2": "Alle clients moeten hun configuratie opnieuw downloaden.",
-    "secretKeyRegenerated": "Geheime sleutel opnieuw gegenereerd",
     "notConnected": "Cliënt niet verbonden",
     "endpoint": "Eindpunt",
     "endpointDesc": "IP van de cliënt vanaf welke de WireGuard-verbinding tot stand wordt gebracht",
@@ -129,7 +124,12 @@
     "firewallIps": "Firewall-toegestane IPs",
     "firewallIpsDesc": "Bestemmings-IP's/CIDR's waartoe deze client toegang heeft (handhaving aan de serverzijde). Laat leeg om Toegestane IP's te gebruiken. Ondersteunt optionele poort - en protocolfiltering. Zie documentatie voor syntaxis.",
     "downloadPng": "PNG downloaden",
-    "copyPng": "PNG kopiëren"
+    "copyPng": "PNG kopiëren",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Wijzigen",
@@ -211,7 +211,9 @@
       "address6": "IPv6-adres",
       "serverAllowedIps": "Toegestane IP's van de server",
       "firewallIps": "Firewall-toegestane IPs",
-      "firewallIpsInvalid": "Ongeldige IP-invoer van firewall. Zie documentatie voor ondersteunde syntaxis."
+      "firewallIpsInvalid": "Ongeldige IP-invoer van firewall. Zie documentatie voor ondersteunde syntaxis.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Gebruikersnaam",

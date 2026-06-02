@@ -115,11 +115,6 @@
     "hooksDescription": "Hooks працюють лише з wg-quick",
     "hooksLeaveEmpty": "Тільки для wg-quick. Інакше залиште порожнім",
     "dnsDesc": "DNS сервер, який використовуватимуть клієнти (перевизначає глобальну конфігурацію)",
-    "regenerateSecretKey": "Перегенерувати секретний ключ",
-    "regenerateSecretKeyDesc": "Згенерувати новий попередньо спільний ключ. Клієнтам потрібно буде повторно завантажити конфігурацію.",
-    "regenerateSecretKeyDialog1": "Ви впевнені, що хочете перегенерувати секретний ключ для",
-    "regenerateSecretKeyDialog2": "Усім клієнтам потрібно буде повторно завантажити конфігурацію.",
-    "secretKeyRegenerated": "Секретний ключ перегенеровано",
     "notConnected": "Клієнт не підключений",
     "endpoint": "Кінцева точка",
     "endpointDesc": "IP-адреса клієнта, з якої встановлюється з’єднання WireGuard",
@@ -129,7 +124,12 @@
     "firewallIps": "Дозволені IP-адреси брандмауера",
     "firewallIpsDesc": "IP-адреси/ CIDR призначення, до яких цей клієнт має доступ (контроль на стороні сервера). Залиште порожнім, щоб використовувати дозволені IP-адреси. Підтримує необов’язкову фільтрацію за портом і протоколом. Див. документацію щодо синтаксису.",
     "downloadPng": "Завантажити PNG",
-    "copyPng": "Скопіювати PNG"
+    "copyPng": "Скопіювати PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Змінити",
@@ -211,7 +211,9 @@
       "address6": "IPv6-адреса",
       "serverAllowedIps": "Дозволені IP-адреси сервера",
       "firewallIps": "Дозволені IP-адреси брандмауера",
-      "firewallIpsInvalid": "Некоректний запис IP для брандмауера. Дивіться документацію щодо підтримуваного синтаксису."
+      "firewallIpsInvalid": "Некоректний запис IP для брандмауера. Дивіться документацію щодо підтримуваного синтаксису.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Ім'я користувача",

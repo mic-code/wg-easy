@@ -115,17 +115,17 @@
     "hooksDescription": "Hooks работят само с wg-quick",
     "hooksLeaveEmpty": "Само за wg-quick. В противен случай остави празно",
     "dnsDesc": "DNS сървър, който клиентите ще използват (замества глобалната настройка)",
-    "regenerateSecretKey": "Regenerate Secret Key",
-    "regenerateSecretKeyDesc": "Generate a new pre-shared key. Clients will need to download their configuration again.",
-    "regenerateSecretKeyDialog1": "Are you sure you want to regenerate the secret key for",
-    "regenerateSecretKeyDialog2": "All clients will need to download their configuration again.",
-    "secretKeyRegenerated": "Secret key regenerated",
     "notConnected": "Клиентът не е свързан",
     "endpoint": "Крайна точка",
     "endpointDesc": "IP адресът на клиента, от който е установена WireGuard връзката",
     "search": "Търси клиенти...",
     "config": "Конфигурация",
-    "viewConfig": "Прегледай конфигурацията"
+    "viewConfig": "Прегледай конфигурацията",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Промени",
@@ -200,7 +200,9 @@
       "expiresAt": "Изтича на",
       "address4": "IPv4 адрес",
       "address6": "IPv6 адрес",
-      "serverAllowedIps": "Разрешени IP-та от сървъра"
+      "serverAllowedIps": "Разрешени IP-та от сървъра",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Потребителско име",

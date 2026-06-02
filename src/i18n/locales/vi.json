@@ -115,11 +115,6 @@
     "hooksDescription": "Hooks chỉ hoạt động với wg-quick",
     "hooksLeaveEmpty": "Chỉ dùng cho wg-quick. Nếu không, để trống",
     "dnsDesc": "Máy chủ DNS mà người dùng sử dụng (ghi đè cấu hình chung)",
-    "regenerateSecretKey": "Tái tạo khóa bí mật",
-    "regenerateSecretKeyDesc": "Tạo khóa pre-shared mới. Các client sẽ cần tải lại cấu hình của họ.",
-    "regenerateSecretKeyDialog1": "Bạn có chắc chắn muốn tái tạo khóa bí mật cho",
-    "regenerateSecretKeyDialog2": "Tất cả client sẽ cần tải lại cấu hình của họ.",
-    "secretKeyRegenerated": "Khóa bí mật đã được tái tạo",
     "notConnected": "Người dùng chưa kết nối",
     "endpoint": "Điểm cuối",
     "endpointDesc": "IP của người dùng dùng để thiết lập kết nối WireGuard",
@@ -129,7 +124,12 @@
     "firewallIps": "IP được phép qua tường lửa",
     "firewallIpsDesc": "Địa chỉ IP/CIDR đích mà người dùng này có thể truy cập (kiểm soát phía máy chủ). Để trống để dùng giá trị IP được phép. Hỗ trợ lọc theo cổng và giao thức tùy chọn. Xem tài liệu để hiểu cú pháp.",
     "downloadPng": "Tải PNG",
-    "copyPng": "Sao chép PNG"
+    "copyPng": "Sao chép PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Thay đổi",
@@ -211,7 +211,9 @@
       "address6": "Địa chỉ IPv6",
       "serverAllowedIps": "IP được phép phía máy chủ",
       "firewallIps": "IP được phép qua tường lửa",
-      "firewallIpsInvalid": "IP tường lửa không hợp lệ. Xem tài liệu để biết cú pháp được hỗ trợ."
+      "firewallIpsInvalid": "IP tường lửa không hợp lệ. Xem tài liệu để biết cú pháp được hỗ trợ.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Tên đăng nhập",

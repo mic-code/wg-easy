@@ -115,11 +115,6 @@
     "hooksDescription": "Hooks funktionieren nur mit wg-quick",
     "hooksLeaveEmpty": "Nur für wg-quick. Andernfalls leer lassen",
     "dnsDesc": "DNS-Server, den die Clients benutzen (überschreibt die globale Konfiguration)",
-    "regenerateSecretKey": "Geheimen Schlüssel neu generieren",
-    "regenerateSecretKeyDesc": "Einen neuen vorgegebenen Schlüssel generieren. Clients müssen ihre Konfiguration erneut herunterladen.",
-    "regenerateSecretKeyDialog1": "Möchten Sie den geheimen Schlüssel wirklich neu generieren für",
-    "regenerateSecretKeyDialog2": "Alle Clients müssen ihre Konfiguration erneut herunterladen.",
-    "secretKeyRegenerated": "Geheimen Schlüssel neu generiert",
     "notConnected": "Client nicht verbunden",
     "endpoint": "Endpunkt",
     "endpointDesc": "IP-Adresse des Clients, von dem aus die WireGuard-Verbindung hergestellt wird",
@@ -129,7 +124,12 @@
     "firewallIps": "Firewall erlaubte IPs",
     "firewallIpsDesc": "Ziel-IPs/CIDRs, auf die dieser Client zugreifen darf (serverseitig erzwingen). Lassen Sie das Feld leer, um die Liste der zugelassenen IPs zu verwenden. Unterstützt optionale Port- und Protokollfilterung. Die Syntax finden Sie in der Dokumentation.",
     "downloadPng": "Herunterladen PNG",
-    "copyPng": "Kopieren PNG"
+    "copyPng": "Kopieren PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Ändern",
@@ -211,7 +211,9 @@
       "address6": "IPv6-Adresse",
       "serverAllowedIps": "Serverseitig erlaubte IP-Adressen",
       "firewallIps": "Von der Firewall zugelassene IP-Adressen",
-      "firewallIpsInvalid": "Ungültiger IP-Eintrag in der Firewall. Informationen zur unterstützten Syntax finden Sie in der Dokumentation."
+      "firewallIpsInvalid": "Ungültiger IP-Eintrag in der Firewall. Informationen zur unterstützten Syntax finden Sie in der Dokumentation.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Benutzername",

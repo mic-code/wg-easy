@@ -115,11 +115,6 @@
     "hooksDescription": "Hooki działają tylko z wg-quick",
     "hooksLeaveEmpty": "Tylko dla wg-quick. W przeciwnym razie pozostaw puste",
     "dnsDesc": "Serwer DNS dla klientów (nadpisuje konfigurację globalną)",
-    "regenerateSecretKey": "Regeneruj klucz tajny",
-    "regenerateSecretKeyDesc": "Wygeneruj nowy klucz wstępnie współdzielony. Klienci będą musieli ponownie pobrać konfigurację.",
-    "regenerateSecretKeyDialog1": "Czy na pewno chcesz regenerować klucz tajny dla",
-    "regenerateSecretKeyDialog2": "Wszyscy klienci będą musieli ponownie pobrać konfigurację.",
-    "secretKeyRegenerated": "Klucz tajny regenerowany",
     "notConnected": "Klient niepołączony",
     "endpoint": "Punkt końcowy",
     "endpointDesc": "Adres IP klienta, z którego ustanowiono połączenie WireGuard",
@@ -129,7 +124,12 @@
     "firewallIps": "Dozwolone IP zapory",
     "firewallIpsDesc": "Docelowe adresy IP/CIDR, do których ten klient ma dostęp (wymuszane po stronie serwera). Pozostaw puste, aby użyć Dozwolonych IP. Obsługuje opcjonalne filtrowanie portów i protokołów. Zobacz dokumentację dla składni.",
     "downloadPng": "Pobierz PNG",
-    "copyPng": "Kopiuj PNG"
+    "copyPng": "Kopiuj PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Zmień",
@@ -211,7 +211,9 @@
       "address6": "Adres IPv6",
       "serverAllowedIps": "Dozwolone IP serwerowe",
       "firewallIps": "Dozwolone IP zapory",
-      "firewallIpsInvalid": "Nieprawidłowy wpis IP zapory. Zobacz dokumentację dla obsługiwanej składni."
+      "firewallIpsInvalid": "Nieprawidłowy wpis IP zapory. Zobacz dokumentację dla obsługiwanej składni.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Nazwa użytkownika",

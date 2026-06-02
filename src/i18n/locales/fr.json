@@ -115,11 +115,6 @@
     "hooksDescription": "Les hooks ne fonctionnent qu'avec wg-quick",
     "hooksLeaveEmpty": "Uniquement pour wg-quick. Sinon, laissez-le vide",
     "dnsDesc": "Serveur DNS que les clients utiliseront (remplace la configuration globale)",
-    "regenerateSecretKey": "Régénérer la clé secrète",
-    "regenerateSecretKeyDesc": "Générer une nouvelle clé pré-partagée. Les clients devront télécharger à nouveau leur configuration.",
-    "regenerateSecretKeyDialog1": "Êtes-vous sûr de vouloir régénérer la clé secrète pour",
-    "regenerateSecretKeyDialog2": "Tous les clients devront télécharger à nouveau leur configuration.",
-    "secretKeyRegenerated": "Clé secrète régénérée",
     "notConnected": "Client non connecté",
     "endpoint": "Endpoint",
     "endpointDesc": "Adresse IP du client à partir duquel la connexion WireGuard est établie",
@@ -129,7 +124,12 @@
     "firewallIps": "IPs autorisées par le pare-feu",
     "firewallIpsDesc": "IPs/CIDRs de destination auxquels ce client peut accéder (application côté serveur). Laissez vide pour utiliser les IPs autorisées. Prend en charge le filtrage optionnel par port et protocole. Voir la documentation pour la syntaxe.",
     "downloadPng": "Télécharger le PNG",
-    "copyPng": "Copier le PNG"
+    "copyPng": "Copier le PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Modifier",
@@ -211,7 +211,9 @@
       "address6": "Adresse IPv6",
       "serverAllowedIps": "IPs autorisées par le serveur",
       "firewallIps": "IPs autorisées par le pare-feu",
-      "firewallIpsInvalid": "Entrée d'IP de pare-feu invalide. Voir la documentation pour la syntaxe supportée."
+      "firewallIpsInvalid": "Entrée d'IP de pare-feu invalide. Voir la documentation pour la syntaxe supportée.",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Nom d'utilisateur",

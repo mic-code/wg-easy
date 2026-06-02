@@ -115,11 +115,6 @@
     "hooksDescription": "हुक्स केवल wg-quick के साथ काम करते हैं",
     "hooksLeaveEmpty": "केवल wg-quick के लिए। अन्यथा, खाली छोड़ें",
     "dnsDesc": "DNS सर्वर जिसे क्लाइंट उपयोग करेंगे (वैश्विक कॉन्फ़िगरेशन को ओवरराइड करता है)",
-    "regenerateSecretKey": "Regenerate Secret Key",
-    "regenerateSecretKeyDesc": "Generate a new pre-shared key. Clients will need to download their configuration again.",
-    "regenerateSecretKeyDialog1": "Are you sure you want to regenerate the secret key for",
-    "regenerateSecretKeyDialog2": "All clients will need to download their configuration again.",
-    "secretKeyRegenerated": "Secret key regenerated",
     "notConnected": "क्लाइंट कनेक्ट नहीं है",
     "endpoint": "एंडपॉइंट",
     "endpointDesc": "क्लाइंट का IP पता जहाँ से WireGuard कनेक्शन स्थापित होता है",
@@ -129,7 +124,12 @@
     "firewallIps": "फ़ायरवॉल द्वारा अनुमत IPs",
     "firewallIpsDesc": "गंतव्य IPs/CIDRs जिन तक यह क्लाइंट पहुँच सकता है (सर्वर-साइड नियंत्रण)। अनुमत IPs उपयोग करने के लिए खाली छोड़ें। वैकल्पिक पोर्ट और प्रोटोकॉल फ़िल्टरिंग का समर्थन करता है। सिंटैक्स के लिए दस्तावेज़ देखें।",
     "downloadPng": "PNG डाउनलोड करें",
-    "copyPng": "PNG कॉपी करें"
+    "copyPng": "PNG कॉपी करें",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "बदलें",
@@ -211,7 +211,9 @@
       "address6": "IPv6 पता",
       "serverAllowedIps": "सर्वर द्वारा अनुमत IPs",
       "firewallIps": "फ़ायरवॉल द्वारा अनुमत IPs",
-      "firewallIpsInvalid": "अमान्य फ़ायरवॉल IP प्रविष्टि। समर्थित सिंटैक्स के लिए दस्तावेज़ देखें।"
+      "firewallIpsInvalid": "अमान्य फ़ायरवॉल IP प्रविष्टि। समर्थित सिंटैक्स के लिए दस्तावेज़ देखें।",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "उपयोगकर्ता नाम",

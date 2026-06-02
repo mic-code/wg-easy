@@ -115,11 +115,6 @@
     "hooksDescription": "Хуки работают только с wg‑quick",
     "hooksLeaveEmpty": "Только для wg‑quick. В остальных случаях оставьте пустым",
     "dnsDesc": "DNS‑сервер, который будут использовать клиенты (переопределяет глобальную конфигурацию)",
-    "regenerateSecretKey": "Перегенерировать секретный ключ",
-    "regenerateSecretKeyDesc": "Сгенерировать новый предварительно общий ключ. Клиентам потребуется повторно скачать конфигурацию.",
-    "regenerateSecretKeyDialog1": "Вы уверены, что хотите перегенерировать секретный ключ для",
-    "regenerateSecretKeyDialog2": "Всем клиентам потребуется повторно скачать конфигурацию.",
-    "secretKeyRegenerated": "Секретный ключ перегенерирован",
     "notConnected": "Клиент не подключен",
     "endpoint": "Точка подключения",
     "endpointDesc": "IP‑адрес клиента, с которого установлено соединение WireGuard",
@@ -129,7 +124,12 @@
     "firewallIps": "Разрешённые фаерволом IP-адреса",
     "firewallIpsDesc": "IP‑адреса/CIDR-диапазоны, к которым может получить доступ клиент (проверка на сервере). Оставьте пустым, будут использоваться «Разрешённые IP‑адреса» (AllowedIPs). Поддерживается фильтрация по портам и протоколам. Подробности см. в документации.",
     "downloadPng": "Скачать PNG",
-    "copyPng": "Копировать PNG"
+    "copyPng": "Копировать PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Изменить",
@@ -211,7 +211,9 @@
       "address6": "IPv6‑адрес",
       "serverAllowedIps": "Разрешённые IP‑адреса сервера",
       "firewallIps": "Разрешённые фаерволом IP-адреса",
-      "firewallIpsInvalid": "Некорректная запись IP-адреса для фаервола. Поддерживаемый синтаксис см. в документации"
+      "firewallIpsInvalid": "Некорректная запись IP-адреса для фаервола. Поддерживаемый синтаксис см. в документации",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Имя пользователя",

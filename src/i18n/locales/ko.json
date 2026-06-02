@@ -114,14 +114,14 @@
     "hooksDescription": "후크는 wg-quick과만 작동합니다",
     "hooksLeaveEmpty": "wg-quick 전용입니다. 그렇지 않으면 비워 두십시오.",
     "dnsDesc": "클라이언트가 사용할 DNS 서버(전역 구성 무시)",
-    "regenerateSecretKey": "비밀 키 재생성",
-    "regenerateSecretKeyDesc": "새 사전 공유 키를 생성합니다. 클라이언트는 구성을 다시 다운로드해야 합니다.",
-    "regenerateSecretKeyDialog1": "비밀 키를 재생성하시겠습니까?",
-    "regenerateSecretKeyDialog2": "모든 클라이언트는 구성을 다시 다운로드해야 합니다.",
-    "secretKeyRegenerated": "비밀 키가 재생성되었습니다",
     "notConnected": "클라이언트가 연결되지 않음",
     "endpoint": "엔드포인트",
-    "endpointDesc": "WireGuard에 연결된 클라이언트의 IP 주소"
+    "endpointDesc": "WireGuard에 연결된 클라이언트의 IP 주소",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "변경",
@@ -196,7 +196,9 @@
       "expiresAt": "만료 시간",
       "address4": "IPv4 주소",
       "address6": "IPv6 주소",
-      "serverAllowedIps": "서버 허용된 IP"
+      "serverAllowedIps": "서버 허용된 IP",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "사용자 이름",

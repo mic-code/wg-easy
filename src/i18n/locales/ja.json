@@ -115,11 +115,6 @@
     "hooksDescription": "フックは wg-quick でのみ動作します",
     "hooksLeaveEmpty": "wg-quick 専用です。それ以外の場合は空のままにしてください",
     "dnsDesc": "クライアントが使用する DNS サーバー (グローバル設定を上書き)",
-    "regenerateSecretKey": "シークレットキーを再生成",
-    "regenerateSecretKeyDesc": "新しい事前共有鍵を生成します。クライアントは設定を再ダウンロードする必要があります。",
-    "regenerateSecretKeyDialog1": "シークレットキーを再生成してもよろしいですか？",
-    "regenerateSecretKeyDialog2": "すべてのクライアントは設定を再ダウンロードする必要があります。",
-    "secretKeyRegenerated": "シークレットキーが再生成されました",
     "notConnected": "クライアントは接続されていません",
     "endpoint": "エンドポイント",
     "endpointDesc": "WireGuard 接続が確立されているクライアントの IP",
@@ -129,7 +124,12 @@
     "firewallIps": "ファイアウォール許可 IP",
     "firewallIpsDesc": "このクライアントがアクセスできる宛先 IP/CIDR (サーバー側で強制)。空欄の場合は Allowed IPs を使用します。任意のポートとプロトコルによるフィルタリングに対応しています。構文はドキュメントを参照してください。",
     "downloadPng": "PNG をダウンロード",
-    "copyPng": "PNG をコピー"
+    "copyPng": "PNG をコピー",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "変更",
@@ -211,7 +211,9 @@
       "address6": "IPv6 アドレス",
       "serverAllowedIps": "サーバー許可 IP",
       "firewallIps": "ファイアウォール許可 IP",
-      "firewallIpsInvalid": "ファイアウォール IP の指定が無効です。対応している構文はドキュメントを参照してください。"
+      "firewallIpsInvalid": "ファイアウォール IP の指定が無効です。対応している構文はドキュメントを参照してください。",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "ユーザー名",

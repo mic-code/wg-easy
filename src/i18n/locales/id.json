@@ -114,14 +114,14 @@
     "hooksDescription": "Hooks hanya berfungsi dengan wg-quick",
     "hooksLeaveEmpty": "Hanya untuk wg-quick. Jika tidak, biarkan kosong.",
     "dnsDesc": "Server DNS yang akan digunakan klien (menggantikan konfigurasi global)",
-    "regenerateSecretKey": "Regenerasi Kunci Rahasia",
-    "regenerateSecretKeyDesc": "Buat kunci pre-shared baru. Klien perlu mengunduh konfigurasi mereka lagi.",
-    "regenerateSecretKeyDialog1": "Apakah Anda yakin ingin meregenerasi kunci rahasia untuk",
-    "regenerateSecretKeyDialog2": "Semua klien perlu mengunduh konfigurasi mereka lagi.",
-    "secretKeyRegenerated": "Kunci rahasia diregenerasi",
     "notConnected": "Klien tidak terhubung",
     "endpoint": "Titik Akhir (Endpoint)",
-    "endpointDesc": "IP klien dari mana koneksi WireGuard dibuat"
+    "endpointDesc": "IP klien dari mana koneksi WireGuard dibuat",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "Ubah",
@@ -196,7 +196,9 @@
       "expiresAt": "Berakhir pada",
       "address4": "Alamat IPv4",
       "address6": "Alamat IPv6",
-      "serverAllowedIps": "IP yang diizinkan untuk Server"
+      "serverAllowedIps": "IP yang diizinkan untuk Server",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "Nama Pengguna",

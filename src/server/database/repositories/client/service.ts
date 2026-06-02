@@ -263,8 +263,7 @@ export class ClientService {
     });
   }
 
-  async regenerateSecretKey(id: ID) {
-    const preSharedKey = await wg.generatePreSharedKey();
+  async setSecretKey(id: ID, preSharedKey: string) {
     await this.#db
       .update(client)
       .set({ preSharedKey })

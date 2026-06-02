@@ -115,11 +115,6 @@
     "hooksDescription": "Hook 設定僅適用於 wg-quick",
     "hooksLeaveEmpty": "僅適用於 wg-quick，否則請保持空白",
     "dnsDesc": "用戶端使用的 DNS 伺服器 (會覆寫全域設定)",
-    "regenerateSecretKey": "重新產生金鑰",
-    "regenerateSecretKeyDesc": "產生新的預共用金鑰。用戶端需要重新下載設定。",
-    "regenerateSecretKeyDialog1": "確定要重新產生金鑰嗎？",
-    "regenerateSecretKeyDialog2": "所有用戶端都需要重新下載設定。",
-    "secretKeyRegenerated": "金鑰已重新產生",
     "notConnected": "用戶端未連線",
     "endpoint": "端點",
     "endpointDesc": "用戶端建立 WireGuard 連線的來源 IP",
@@ -129,7 +124,12 @@
     "firewallIps": "防火牆允許的 IP",
     "firewallIpsDesc": "此用戶端可存取的目標 IP/CIDR (由伺服器端強制執行)，留白則使用「允許的 IP」中的設定。支援選用的連接埠與協定篩選，語法請參閱說明文件。",
     "downloadPng": "下載 PNG",
-    "copyPng": "複製 PNG"
+    "copyPng": "複製 PNG",
+    "setSecretKey": "Set Secret Key",
+    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "generateSecretKey": "Generate",
+    "preSharedKey": "Pre-Shared Key",
+    "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
     "change": "變更",
@@ -211,7 +211,9 @@
       "address6": "IPv6 位址",
       "serverAllowedIps": "伺服器允許的 IP",
       "firewallIps": "防火牆允許的 IP",
-      "firewallIpsInvalid": "防火牆 IP 格式無效。請參閱說明文件以了解支援的語法。"
+      "firewallIpsInvalid": "防火牆 IP 格式無效。請參閱說明文件以了解支援的語法。",
+      "preSharedKey": "Pre-Shared Key",
+      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
       "username": "使用者名稱",
