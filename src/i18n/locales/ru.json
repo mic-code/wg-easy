@@ -125,7 +125,7 @@
     "firewallIpsDesc": "IP‑адреса/CIDR-диапазоны, к которым может получить доступ клиент (проверка на сервере). Оставьте пустым, будут использоваться «Разрешённые IP‑адреса» (AllowedIPs). Поддерживается фильтрация по портам и протоколам. Подробности см. в документации.",
     "downloadPng": "Скачать PNG",
     "copyPng": "Копировать PNG",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

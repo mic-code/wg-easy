@@ -125,7 +125,7 @@
     "firewallIpsDesc": "客户端可访问的目标 IP/CIDR 范围（由服务器端进行限制）。留空时将使用 服务端允许的IP 设置。支持按 端口 和 协议 进行过滤。具体语法请查看文档。",
     "downloadPng": "下载图片",
     "copyPng": "复制图片",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

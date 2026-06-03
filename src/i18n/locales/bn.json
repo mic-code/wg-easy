@@ -117,7 +117,7 @@
     "notConnected": "ক্লায়েন্ট সংযুক্ত নয়",
     "endpoint": "এন্ডপয়েন্ট",
     "endpointDesc": "ক্লায়েন্টের IP যেখান থেকে WireGuard সংযোগ স্থাপন করা হয়েছে",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

@@ -117,7 +117,7 @@
     "notConnected": "Client não conectado",
     "endpoint": "Endpoint",
     "endpointDesc": "IP do cliente a partir do qual a conexão WireGuard é estabelecida",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

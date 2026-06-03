@@ -125,7 +125,7 @@
     "firewallIpsDesc": "IP-адреси/ CIDR призначення, до яких цей клієнт має доступ (контроль на стороні сервера). Залиште порожнім, щоб використовувати дозволені IP-адреси. Підтримує необов’язкову фільтрацію за портом і протоколом. Див. документацію щодо синтаксису.",
     "downloadPng": "Завантажити PNG",
     "copyPng": "Скопіювати PNG",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

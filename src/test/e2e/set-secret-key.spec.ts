@@ -52,7 +52,7 @@ async function navigateToClientDetail(page: Page, clientId: number, clientName: 
   await page.waitForTimeout(1000);
 }
 
-test.describe('Set Secret Key', () => {
+test.describe('Set Private Key', () => {
   test('should set a specific private key via UI and verify it is persisted', async ({ page, context }) => {
     await login(page);
     const request = context.request;
@@ -63,7 +63,7 @@ test.describe('Set Secret Key', () => {
 
     await navigateToClientDetail(page, client.id, client.name);
 
-    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set secret key/i });
+    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set private key/i });
     await expect(setKeyButton.first()).toBeVisible({ timeout: 10000 });
     await setKeyButton.first().scrollIntoViewIfNeeded();
     await setKeyButton.first().click();
@@ -75,7 +75,7 @@ test.describe('Set Secret Key', () => {
     const keyInput = dialog.locator('#privateKey');
     await keyInput.fill(specificKey);
 
-    const confirmButton = dialog.locator('button').filter({ hasText: /set secret key/i });
+    const confirmButton = dialog.locator('button').filter({ hasText: /set private key/i });
     await confirmButton.click();
 
     await expect(dialog).not.toBeVisible({ timeout: 5000 });
@@ -98,7 +98,7 @@ test.describe('Set Secret Key', () => {
 
     await navigateToClientDetail(page, client.id, client.name);
 
-    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set secret key/i });
+    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set private key/i });
     await expect(setKeyButton.first()).toBeVisible({ timeout: 10000 });
     await setKeyButton.first().scrollIntoViewIfNeeded();
     await setKeyButton.first().click();
@@ -115,7 +115,7 @@ test.describe('Set Secret Key', () => {
     expect(generatedKey).toBeTruthy();
     expect(generatedKey.length).toBeGreaterThanOrEqual(43);
 
-    const confirmButton = dialog.locator('button').filter({ hasText: /set secret key/i });
+    const confirmButton = dialog.locator('button').filter({ hasText: /set private key/i });
     await confirmButton.click();
 
     await expect(dialog).not.toBeVisible({ timeout: 5000 });
@@ -135,7 +135,7 @@ test.describe('Set Secret Key', () => {
 
     await navigateToClientDetail(page, client.id, client.name);
 
-    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set secret key/i });
+    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set private key/i });
     await expect(setKeyButton.first()).toBeVisible({ timeout: 10000 });
     await setKeyButton.first().scrollIntoViewIfNeeded();
     await setKeyButton.first().click();
@@ -208,7 +208,7 @@ test.describe('Set Secret Key', () => {
 
     await navigateToClientDetail(page, client.id, client.name);
 
-    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set secret key/i });
+    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set private key/i });
     await expect(setKeyButton.first()).toBeVisible({ timeout: 10000 });
     await setKeyButton.first().scrollIntoViewIfNeeded();
     await setKeyButton.first().click();
@@ -225,7 +225,7 @@ test.describe('Set Secret Key', () => {
     expect(generatedKey).toBeTruthy();
     expect(generatedKey.length).toBeGreaterThanOrEqual(43);
 
-    const confirmButton = dialog.locator('button').filter({ hasText: /set secret key/i });
+    const confirmButton = dialog.locator('button').filter({ hasText: /set private key/i });
     await confirmButton.click();
 
     await expect(dialog).not.toBeVisible({ timeout: 5000 });
@@ -249,7 +249,7 @@ test.describe('Set Secret Key', () => {
 
     await navigateToClientDetail(page, client.id, client.name);
 
-    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set secret key/i });
+    const setKeyButton = page.locator('input[type="button"]').filter({ hasText: /set private key/i });
     await expect(setKeyButton.first()).toBeVisible({ timeout: 10000 });
     await setKeyButton.first().scrollIntoViewIfNeeded();
     await setKeyButton.first().click();
@@ -266,7 +266,7 @@ test.describe('Set Secret Key', () => {
     expect(generatedKey).toBeTruthy();
     expect(generatedKey.length).toBeGreaterThanOrEqual(43);
 
-    const confirmButton = dialog.locator('button').filter({ hasText: /set secret key/i });
+    const confirmButton = dialog.locator('button').filter({ hasText: /set private key/i });
     await confirmButton.click();
 
     await expect(dialog).not.toBeVisible({ timeout: 5000 });

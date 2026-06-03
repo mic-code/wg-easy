@@ -125,7 +125,7 @@
     "firewallIpsDesc": "このクライアントがアクセスできる宛先 IP/CIDR (サーバー側で強制)。空欄の場合は Allowed IPs を使用します。任意のポートとプロトコルによるフィルタリングに対応しています。構文はドキュメントを参照してください。",
     "downloadPng": "PNG をダウンロード",
     "copyPng": "PNG をコピー",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

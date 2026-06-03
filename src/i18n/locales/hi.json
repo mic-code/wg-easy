@@ -125,7 +125,7 @@
     "firewallIpsDesc": "गंतव्य IPs/CIDRs जिन तक यह क्लाइंट पहुँच सकता है (सर्वर-साइड नियंत्रण)। अनुमत IPs उपयोग करने के लिए खाली छोड़ें। वैकल्पिक पोर्ट और प्रोटोकॉल फ़िल्टरिंग का समर्थन करता है। सिंटैक्स के लिए दस्तावेज़ देखें।",
     "downloadPng": "PNG डाउनलोड करें",
     "copyPng": "PNG कॉपी करें",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",

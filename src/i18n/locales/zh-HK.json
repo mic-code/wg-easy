@@ -125,7 +125,7 @@
     "firewallIpsDesc": "此客戶端可存取的目的地IP/CIDR（伺服器端強制執行）。留空則使用「IP白名單」。支援選填的連接埠及協定過濾，語法請參閱說明文件。",
     "downloadPng": "正在下載PNG",
     "copyPng": "複製PNG",
-    "setSecretKey": "Set Secret Key",
+    "setSecretKey": "Set Private Key",
     "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
     "privateKey": "Private Key",
