@@ -6,9 +6,9 @@
       {{ $t('client.setSecretKeyDesc') }}
       <FormGroup>
         <FormTextField
-          id="preSharedKey"
-          v-model="preSharedKey"
-          :label="$t('client.preSharedKey')"
+          id="privateKey"
+          v-model="privateKey"
+          :label="$t('client.privateKey')"
         />
         <FormSecondaryActionField
           :label="$t('client.generateSecretKey')"
@@ -22,7 +22,7 @@
         <BasePrimaryButton>{{ $t('dialog.cancel') }}</BasePrimaryButton>
       </DialogClose>
       <DialogClose as-child>
-        <BaseSecondaryButton @click="$emit('set', preSharedKey)">
+        <BaseSecondaryButton @click="$emit('set', privateKey)">
           {{ $t('client.setSecretKey') }}
         </BaseSecondaryButton>
       </DialogClose>
@@ -34,12 +34,12 @@
 defineEmits(['set']);
 defineProps<{ triggerClass?: string; clientName: string }>();
 
-const preSharedKey = ref('');
+const privateKey = ref('');
 
 async function generateKey() {
-  const data = await $fetch<{ preSharedKey: string }>('/api/client/generateSecretKey', {
+  const data = await $fetch<{ privateKey: string }>('/api/client/generateSecretKey', {
     method: 'get',
   });
-  preSharedKey.value = data.preSharedKey;
+  privateKey.value = data.privateKey;
 }
 </script>

@@ -294,7 +294,7 @@ const _setSecretKey = useSubmit(
   }
 );
 
-function setSecretKey(preSharedKey: string) {
-  return _setSecretKey({ preSharedKey });
+function setSecretKey(privateKey: string) {
+  return _setSecretKey({ privateKey });
 }
 </script>

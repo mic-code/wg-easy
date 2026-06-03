@@ -263,10 +263,10 @@ export class ClientService {
     });
   }
 
-  async setSecretKey(id: ID, preSharedKey: string) {
+  async setSecretKey(id: ID, privateKey: string, publicKey: string) {
     await this.#db
       .update(client)
-      .set({ preSharedKey })
+      .set({ privateKey, publicKey })
       .where(eq(client.id, id))
       .execute();
   }

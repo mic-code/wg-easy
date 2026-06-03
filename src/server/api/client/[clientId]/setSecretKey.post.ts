@@ -2,7 +2,7 @@ import { ClientGetSchema } from '#db/repositories/client/types';
 import z from 'zod';
 
 const SetSecretKeySchema = z.object({
-  preSharedKey: z
+  privateKey: z
     .string()
     .min(1)
     .refine(
@@ -14,7 +14,7 @@ const SetSecretKeySchema = z.object({
           return false;
         }
       },
-      { message: 'Pre-Shared Key must be a valid 32-byte base64-encoded key' }
+      { message: 'Private Key must be a valid 32-byte base64-encoded key' }
     ),
 });
 
@@ -30,12 +30,14 @@ export default definePermissionEventHandler(
     const client = await Database.clients.get(clientId);
     checkPermissions(client);
 
-    const { preSharedKey } = await readValidatedBody(
+    const { privateKey } = await readValidatedBody(
       event,
       validateZod(SetSecretKeySchema, event)
     );
 
-    await Database.clients.setSecretKey(clientId, preSharedKey);
+    const publicKey = await wg.getPublicKey(privateKey);
+
+    await Database.clients.setSecretKey(clientId, privateKey, publicKey);
     await WireGuard.saveConfig();
 
     return { success: true };

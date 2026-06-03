@@ -126,9 +126,9 @@
     "downloadPng": "Скачать PNG",
     "copyPng": "Копировать PNG",
     "setSecretKey": "Set Secret Key",
-    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
-    "preSharedKey": "Pre-Shared Key",
+    "privateKey": "Private Key",
     "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
@@ -212,7 +212,7 @@
       "serverAllowedIps": "Разрешённые IP‑адреса сервера",
       "firewallIps": "Разрешённые фаерволом IP-адреса",
       "firewallIpsInvalid": "Некорректная запись IP-адреса для фаервола. Поддерживаемый синтаксис см. в документации",
-      "preSharedKey": "Pre-Shared Key",
+      "privateKey": "Private Key",
       "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {

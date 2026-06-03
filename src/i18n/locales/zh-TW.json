@@ -126,9 +126,9 @@
     "downloadPng": "下載 PNG",
     "copyPng": "複製 PNG",
     "setSecretKey": "Set Secret Key",
-    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
-    "preSharedKey": "Pre-Shared Key",
+    "privateKey": "Private Key",
     "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
@@ -212,7 +212,7 @@
       "serverAllowedIps": "伺服器允許的 IP",
       "firewallIps": "防火牆允許的 IP",
       "firewallIpsInvalid": "防火牆 IP 格式無效。請參閱說明文件以了解支援的語法。",
-      "preSharedKey": "Pre-Shared Key",
+      "privateKey": "Private Key",
       "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {

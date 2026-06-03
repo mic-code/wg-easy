@@ -2,3 +2,6 @@
 *.swp
 node_modules
 .autocode/
+task.md
+test-results/
+.pnpm-store/

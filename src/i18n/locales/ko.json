@@ -118,9 +118,9 @@
     "endpoint": "엔드포인트",
     "endpointDesc": "WireGuard에 연결된 클라이언트의 IP 주소",
     "setSecretKey": "Set Secret Key",
-    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
-    "preSharedKey": "Pre-Shared Key",
+    "privateKey": "Private Key",
     "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
@@ -197,7 +197,7 @@
       "address4": "IPv4 주소",
       "address6": "IPv6 주소",
       "serverAllowedIps": "서버 허용된 IP",
-      "preSharedKey": "Pre-Shared Key",
+      "privateKey": "Private Key",
       "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {

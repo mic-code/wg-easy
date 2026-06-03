@@ -1,4 +1,4 @@
 export default definePermissionEventHandler('clients', 'update', async () => {
-  const preSharedKey = await wg.generatePreSharedKey();
-  return { preSharedKey };
+  const privateKey = await wg.generatePrivateKey();
+  return { privateKey };
 });

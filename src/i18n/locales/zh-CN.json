@@ -126,9 +126,9 @@
     "downloadPng": "下载图片",
     "copyPng": "复制图片",
     "setSecretKey": "Set Secret Key",
-    "setSecretKeyDesc": "Set a new pre-shared key for this client. Clients will need to download their configuration again.",
+    "setSecretKeyDesc": "Set a new private key for this client. The public key will be regenerated automatically. Clients will need to download their configuration again.",
     "generateSecretKey": "Generate",
-    "preSharedKey": "Pre-Shared Key",
+    "privateKey": "Private Key",
     "secretKeySet": "Secret key set successfully"
   },
   "dialog": {
@@ -212,7 +212,7 @@
       "serverAllowedIps": "服务端允许的IP",
       "firewallIps": "防火墙允许的IP",
       "firewallIpsInvalid": "IP格式错误。请查看相关文档获取支持的写法。",
-      "preSharedKey": "Pre-Shared Key",
+      "privateKey": "Private Key",
       "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
     },
     "user": {
