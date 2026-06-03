@@ -213,7 +213,7 @@
       "firewallIps": "Разрешённые фаерволом IP-адреса",
       "firewallIpsInvalid": "Некорректная запись IP-адреса для фаервола. Поддерживаемый синтаксис см. в документации",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "Имя пользователя",

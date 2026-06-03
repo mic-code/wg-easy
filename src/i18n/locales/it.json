@@ -198,7 +198,7 @@
       "address6": "Indirizzo IPv6",
       "serverAllowedIps": "IP consentiti dal Server",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "Nome utente",

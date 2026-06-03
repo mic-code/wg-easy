@@ -212,7 +212,7 @@
       "firewallIps": "IPs permitidas da devasa",
       "firewallIpsInvalid": "Entrada de IP da devasa non válida. Consulta a documentación para a sintaxe admitida.",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "Nome de usuario",

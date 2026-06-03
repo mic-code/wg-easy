@@ -213,7 +213,7 @@
       "firewallIps": "Von der Firewall zugelassene IP-Adressen",
       "firewallIpsInvalid": "Ungültiger IP-Eintrag in der Firewall. Informationen zur unterstützten Syntax finden Sie in der Dokumentation.",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "Benutzername",

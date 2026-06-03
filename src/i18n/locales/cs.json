@@ -203,7 +203,7 @@
       "address6": "IPv6 adresa",
       "serverAllowedIps": "Povolené IP adresy serveru",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "Uživatelské jméno",

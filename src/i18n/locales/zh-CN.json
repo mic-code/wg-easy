@@ -213,7 +213,7 @@
       "firewallIps": "防火墙允许的IP",
       "firewallIpsInvalid": "IP格式错误。请查看相关文档获取支持的写法。",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "用户名",

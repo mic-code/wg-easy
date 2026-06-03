@@ -213,7 +213,7 @@
       "firewallIps": "IP được phép qua tường lửa",
       "firewallIpsInvalid": "IP tường lửa không hợp lệ. Xem tài liệu để biết cú pháp được hỗ trợ.",
       "privateKey": "Private Key",
-      "preSharedKeyInvalid": "Pre-Shared Key must be a valid base64-encoded key"
+      "privateKeyInvalid": "Private Key must be a valid base64-encoded key (44 characters)"
     },
     "user": {
       "username": "Tên đăng nhập",
