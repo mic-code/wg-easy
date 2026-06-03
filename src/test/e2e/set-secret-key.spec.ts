@@ -81,11 +81,21 @@ test.describe('Set Private Key', () => {
     await expect(dialog).not.toBeVisible({ timeout: 5000 });
     await page.waitForTimeout(2000);
 
-    const privateKeyAfter = extractPrivateKey(await getClientConfig(request, client.id));
-    expect(privateKeyAfter).toBe(specificKey);
+    const viewConfigButton = page.locator('input[type="button"]').filter({ hasText: /view configuration/i });
+    await expect(viewConfigButton.first()).toBeVisible({ timeout: 10000 });
+    await viewConfigButton.first().scrollIntoViewIfNeeded();
+    await viewConfigButton.first().click();
 
-    const privateKeyRecheck = extractPrivateKey(await getClientConfig(request, client.id));
-    expect(privateKeyRecheck).toBe(specificKey);
+    const configDialog = page.locator('[role="dialog"]');
+    await expect(configDialog).toBeVisible({ timeout: 5000 });
+
+    const codeBlock = configDialog.locator('code, pre');
+    await expect(codeBlock).toBeVisible({ timeout: 5000 });
+    const configText = await codeBlock.textContent();
+
+    const privateKeyInUI = extractPrivateKey(configText ?? '');
+    expect(privateKeyInUI).toBe(specificKey);
+    expect(privateKeyInUI).not.toBe(privateKeyBefore);
   });
 
   test('should generate a new key via the Generate button and verify it changes', async ({ page, context }) => {
@@ -121,9 +131,21 @@ test.describe('Set Private Key', () => {
     await expect(dialog).not.toBeVisible({ timeout: 5000 });
     await page.waitForTimeout(2000);
 
-    const privateKeyAfter = extractPrivateKey(await getClientConfig(request, client.id));
-    expect(privateKeyAfter).toBe(generatedKey);
-    expect(privateKeyAfter).not.toBe(privateKeyBefore);
+    const viewConfigButton = page.locator('input[type="button"]').filter({ hasText: /view configuration/i });
+    await expect(viewConfigButton.first()).toBeVisible({ timeout: 10000 });
+    await viewConfigButton.first().scrollIntoViewIfNeeded();
+    await viewConfigButton.first().click();
+
+    const configDialog = page.locator('[role="dialog"]');
+    await expect(configDialog).toBeVisible({ timeout: 5000 });
+
+    const codeBlock = configDialog.locator('code, pre');
+    await expect(codeBlock).toBeVisible({ timeout: 5000 });
+    const configText = await codeBlock.textContent();
+
+    const privateKeyInUI = extractPrivateKey(configText ?? '');
+    expect(privateKeyInUI).toBe(generatedKey);
+    expect(privateKeyInUI).not.toBe(privateKeyBefore);
   });
 
   test('should cancel and keep the same private key', async ({ page, context }) => {
